@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_adobesign_agreement,adobesign.agreement,model_adobesign_agreement,,1,1,1,1
-access_adobesign_credentials,adobe.credentials,model_adobe_credentials,,1,1,1,1

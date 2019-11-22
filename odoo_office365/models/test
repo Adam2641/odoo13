@@ -1,6 +1,0 @@
-
-x =2
-b = 10
-print((lambda x,b: x ** b))
-
-# print(double(2,5))
