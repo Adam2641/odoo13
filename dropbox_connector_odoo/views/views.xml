@@ -1,0 +1,82 @@
+<odoo>
+  <data>
+       <record model="ir.ui.view" id="partner_dropbox_form_view">
+            <field name="name">partner.dropbox</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name= "dropbox" string="Dropbox">
+                        <group string="Dropbox Account" name="account">
+                            <field name="user_name_dropbox" domain = "['|',('create_uid','=',uid),('create_uid','=',False)]"/>
+                        </group>
+                        <group string="Upload" name="documents">
+                            <field name="upload_file_data_dropbox" filename="my_file_fname" widget="many2many_binary"/>
+                            <button name="upload_doc_dropbox" type="object" string="Upload" class="oe_highlight" />
+                        </group>
+                        <button name="sync_data" type="object" string="Sync Documents Links" class="oe_highlight" />
+                        <group string="Download" name="download">
+                            <field name="order_line" mode="tree,kanban">
+                                    <form string="Sales Order Lines" >
+                                        <group>
+                                            <group>
+                                                <field name="file_name"/>
+                                                <field name="document_link" widget="url"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                    <tree string="Sales Order Lines" create="false">
+                                        <field name="file_name" />
+                                        <field name="document_link" widget="url"/>
+                                    </tree>
+                            </field>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="dropbox_setting_action">
+            <field name="name">Dropbox Settings</field>
+            <field name="res_model">dropbox.credentials</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|',('create_uid','=',uid),('create_uid','=',False)]</field>
+        </record>
+
+        <record model="ir.ui.view" id="dropbox_settings_form_view">
+            <field name="name">dropboxcredentials.form</field>
+            <field name="model">dropbox.credentials</field>
+            <field name="arch" type="xml">
+                <form string="Dropbox Credentials">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="dropbox_folder" placeholder="Dropbox folder name where data will be placed."/>
+                            <field name="access_token"/>
+                            <button name="test_connection" type="object" string="Test Connection" class="oe_highlight" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dropbox_settings_tree_view">
+            <field name="name">dropboxcredentials.tree</field>
+            <field name="model">dropbox.credentials</field>
+            <field name="arch" type="xml">
+                <tree string="Dropbox Users">
+                            <field name="name"/>
+                            <field name="dropbox_folder"/>
+                            <field name="access_token"/>
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="main_dropbox_menu" name="Dropbox"/>
+
+        <menuitem id="dropbox_setting_menu" name="Settings" parent="main_dropbox_menu"
+                action="dropbox_setting_action" />
+
+  </data>
+</odoo>
