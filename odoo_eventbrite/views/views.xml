@@ -1,0 +1,94 @@
+<odoo>
+   <data noupdate="1">
+      <record id="my_record_01" model="eventbrite.connector">
+         <field name="field_name">eventbrite</field>
+      </record>
+   </data>
+   <data>
+      <!-- Add instructor field to existing view -->
+      <record model="ir.ui.view" id="custom_user_form_view">
+         <field name="name">user.custom_user</field>
+         <field name="model">res.users</field>
+         <field name="inherit_id" ref="base.view_users_form"/>
+         <field name="arch" type="xml">
+            <notebook position="inside">
+               <page string="Eventbrite">
+                  <group>
+                     <field name="access_token"/>
+                     <button string="Test Connection" type="object" name="test_connection" class="oe_highlight"/>
+                  </group>
+               </page>
+            </notebook>
+         </field>
+      </record>
+      <record model="ir.ui.view" id="eventbrite_form_view">
+         <field name="name">eventbrite.form</field>
+         <field name="model">eventbrite.connector</field>
+         <field name="arch" type="xml">
+            <form string="EventBrite Settings" create="false" edit="false">
+               <sheet>
+                  <group>
+                     <h1>ODOO Eventbrite CONNECTOR</h1>
+                  </group>
+                  <group>
+                     <group>
+                        <!--<field name="event_id"/>-->
+                     </group>
+                     <group>
+                     </group>
+                     <group>
+                        <button name="sync_data" type="object" string="Sync Eventbrite" class="oe_highlight"
+                           icon="fa-refresh fa-2x" style="width:50%"/>
+                     </group>
+                  </group>
+                  <notebook colspan="3">
+                     <page string="EventBrite" autofocus="autofocus">
+                        <group>
+                           <field name="events" mode="tree">
+                              <tree string="Events" create="false" delete="false"
+                                 decoration-bf="message_needaction==True"
+                                 decoration-danger="(seats_min and seats_min&gt;seats_reserved) or (seats_max and seats_max&lt;seats_reserved)"
+                                 decoration-muted="state=='cancel'">
+                                 <field name="name"/>
+                                 <field name="event_type_id"/>
+                                 <field name="date_begin"/>
+                                 <field name="date_end"/>
+                                 <field name="seats_reserved"/>
+                                 <field name="seats_min"/>
+                                 <field name="seats_max" invisible="1"/>
+                                 <field name="user_id"/>
+                                 <field name="state"/>
+                                 <field name="message_needaction" invisible="1"/>
+                              </tree>
+                           </field>
+                        </group>
+                     </page>
+                     <!--<page string="Connector Graph View" autofocus="autofocus"/>-->
+                     <!--<page string="Schedule Sync Setting" autofocus="autofocus"/>-->
+                  </notebook>
+               </sheet>
+            </form>
+         </field>
+      </record>
+      <record model="ir.ui.view" id="eventbrite_tree_view">
+         <field name="name">eventbrite.tree</field>
+         <field name="model">eventbrite.connector</field>
+         <field name="arch" type="xml">
+            <tree string="eventbrite " create="false" edit="false">
+               <field name="field_name"/>
+            </tree>
+         </field>
+      </record>
+      <record model="ir.actions.act_window" id="eventbrite_action">
+         <field name="name">Eventbrite</field>
+         <field name="res_model">eventbrite.connector</field>
+         <field name="view_type">form</field>
+         <field name="view_mode">form,tree</field>
+         <field name="res_id" ref="odoo_eventbrite.my_record_01"/>
+         <field name="target">inline</field>
+      </record>
+      <menuitem id="main_eventbrite_menu" name="Eventbrite"/>
+      <menuitem id="eventbrite_menu" name="Eventbrite"
+         parent="main_eventbrite_menu" action="eventbrite_action"/>
+   </data>
+</odoo>

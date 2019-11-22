@@ -1,0 +1,102 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="adobesign_partner_view">
+            <field name="name">adobesign_partner_view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page name="adobesign_page" string="Adobe Sign">
+                        <group string="AdobeSign Account">
+                            <field name="account_id" domain="['|',('create_uid','=',uid),('create_uid','=',False)]" />
+                        </group>
+
+                        <group string="Send Document">
+                            <field name="adobesign_upload_data" widget="many2many_binary" />
+                            <button name="send_document" type="object" string="Send Document" class="oe_highlight" />
+                        </group>
+
+                        <div style="color:#7c7bad;font-weight:bold;font-size:20px">Document Status</div>
+                        <button string="Update Status" name="update_status" type="object" class="oe_highlight" />
+                        <br/>
+                        <br/>
+                        <field name="agreement_ids" widget="one2many_list">
+                            <form string="Agreements Form">
+                                <group>
+                                    <group>
+                                        <field name="name" />
+                                        <field name="agreement_status" />
+                                        <field name="unsigned_file_data_adobesign" widget="many2many_binary" />
+                                        <field name="upload_file_data_adobesign" widget="many2many_binary" />
+                                    </group>
+                                </group>
+
+                            </form>
+                            <tree string="Agreements" create="0" edit="0">
+                                <field name="name" />
+                                <field name="agreement_status" />
+                                <field name="unsigned_file_data_adobesign" widget="many2many_binary" />
+                                <field name="upload_file_data_adobesign" widget="many2many_binary" />
+
+                            </tree>
+                        </field>
+
+                    </page>
+                </notebook>
+            </field>
+
+        </record>
+
+        <record model="ir.actions.act_window" id="as_setting_action">
+            <field name="name">Generate Token</field>
+            <field name="res_model">adobe.credentials</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|',('create_uid','=',uid),('create_uid','=',False)]</field>
+
+        </record>
+
+        <record model="ir.ui.view" id="as_settings_form_view">
+
+            <field name="name">adobesign.form</field>
+            <field name="model">adobe.credentials</field>
+            <field name="arch" type="xml">
+
+                <form string="AdobeSign Credentials Form">
+
+                    <h1>Adobe Credentials</h1>
+                    <group>
+                        <field name="name" />
+                        <field name="client_id" />
+                        <field name="client_secret" />
+                        <field name="redirect_url" />
+                        <button name="test_connection" type="object" string="Test Connection" class="oe_highlight" />
+                    </group>
+                    <br>
+
+                    </br>
+                    <h1>Adobe Credentials</h1>
+                    <group>
+                        <field name="login_url" widget="url" />
+                        <field name="code" />
+                        <button name="generate_token" type="object" string="Generate Token" class="oe_highlight" />
+                    </group>
+
+                </form>
+
+            </field>
+
+        </record>
+
+        <menuitem id="main_adobe_menu" name="AdobeSign" />
+
+        <menuitem id="adobe_configuration" name="AdobeSign" parent="main_adobe_menu" />
+
+        <menuitem id="adobe_setting_menu" name="Settings" parent="adobe_configuration" action="as_setting_action" />
+        <!--<menuitem id="adobe_token_menu" name="Access Token" parent="adobe_configuration"-->
+        <!--action="as_token_action"/>-->
+
+    </data>
+</odoo>

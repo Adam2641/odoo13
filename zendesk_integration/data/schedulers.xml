@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="syncing_data_from_zendesk" model="ir.cron">
+            <field name="name">Tickets Scheduler</field>
+            <field name="user_id" ref="base.group_user"/>
+            <field name="model_id" ref="model_res_users" />
+            <field name="state">code</field>
+            <field name="active">0</field>
+            <field name="code">model.auto_sync_data()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+</odoo>

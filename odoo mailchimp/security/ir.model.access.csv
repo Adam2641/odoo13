@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mailchimp_connector,access.mailchimp.connector,model_mailchimp_connector,base.group_user,1,1,1,1
+access_mailchimp_list,access.mailchimp.list,model_mailchimp_list,base.group_user,1,1,1,1
+access_mailchimp_campaign,access.mailchimp.campaign,model_mailchimp_campaign,base.group_user,1,1,1,1
+access_mailchimp_settings,access.mailchimp.settings,model_mailchimp_settings,base.group_user,1,1,1,1
+access_partner_campaign,access.partner.campaign,model_partner_campaign,base.group_user,1,1,1,1

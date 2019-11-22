@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_docu_credentials,access.docu.credentials,model_docu_credentials,base.group_user,1,1,1,1
+access_docusign_agreement,access.docusign.agreement,model_docusign_agreement,base.group_user,1,1,1,1

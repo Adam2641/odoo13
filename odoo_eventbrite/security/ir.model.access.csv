@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eventbrite_connector,access.eventbrite.connector,model_eventbrite_connector,,1,1,1,1
+access_event_event_ticket,access.event.event.ticket,model_event_event_ticket,,1,1,1,1
+access_event_event,access.event.event,model_event_event,,1,1,1,1

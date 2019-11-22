@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <data noupdate="1">
+        <record id="my_record_01" model="xero.connector">
+            <field name="field_name">Xero</field>
+        </record>
+        </data>
+
+         <record id="product_order_new_action1" model="ir.actions.server">
+            <field name="name">Sync to Xero</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_product_template" />
+            <field name="binding_model_id" ref="model_product_template" />
+            <field name="state">code</field>
+            <field name="code">records.sync_product_to_zero()</field>
+        </record>
+
+        <record id="contacts_new_action" model="ir.actions.server">
+            <field name="name">Sync to Xero</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_partner" />
+            <field name="binding_model_id" ref="model_res_partner" />
+            <field name="state">code</field>
+            <field name="code">records.upload_contacts_xero()</field>
+        </record>
+
+        <record id="invoices_order_new_action1" model="ir.actions.server">
+            <field name="name">Sync Invoices to Xero</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">records.sync_invoices_to_xero()</field>
+        </record>
+
+        <record id="xero_importform_view" model="ir.ui.view">
+            <field name="name">xero.importform</field>
+            <field name="model">xero.connector</field>
+            <field name="arch" type="xml">
+                <form string="Xero Connector" >
+                    <sheet>
+                        <group>
+                            <group>
+                                <h1>ODOO-XERO CONNECTOR</h1>
+                            </group>
+                            <group>
+                                <group>
+
+                                </group>
+                                <group>
+
+                                </group>
+                            </group>
+
+
+                        </group>
+
+                        <group>
+
+                            <field name="consumer_key"/>
+                            <field name="consumer_secret"/>
+                            <button name="get_code" type="object" string="Get Code" class="oe_highlight" />
+                        </group>
+                        <group>
+                            <field name="verify_code"/>
+                            <button name="code_verify" type="object" string="Authenticate" class="oe_highlight"/>
+                        </group>
+
+                        <notebook >
+                            <page string="Xero Contacts">
+                                <group>
+
+                                    <button name="import_contacts" type="object" string="  Import Contacts from Xero"
+                                        class="oe_highlight"
+                                        icon="fa-arrow-circle-down "  style="margin-left: 30%"/>
+
+
+                                    <button name="export_all_contacts" type="object" string="  Export Contacts to Xero"
+                                        class="oe_highlight"
+                                        icon="fa-arrow-circle-up "  style="margin-left: 30%"/>
+
+                                </group>
+
+                            </page>
+
+                            <page string="Xero Products">
+                                <group>
+
+                                    <button name="import_products" type="object" string="  Import Products from Xero"
+                                        class="oe_highlight"
+                                        icon="fa-arrow-circle-down "  style="margin-left: 30%"/>
+
+
+                                    <button name="export_all_products" type="object" string="  Export Products to Xero"
+                                        class="oe_highlight"
+                                        icon="fa-arrow-circle-up "  style="margin-left: 30%"/>
+
+                                </group>
+
+                            </page>
+                            <page string="Xero Invoices">
+                                <group>
+
+                                    <button name="import_invoices" type="object" string="  Import Invoices from Xero"
+                                        class="oe_highlight"
+                                        icon="fa-arrow-circle-down "  style="margin-left: 30%"/>
+
+
+                                    <button name="export_all_invoices" type="object" string="  Export Invoices to Xero"
+                                        class="oe_highlight"
+                                        icon="fa-arrow-circle-up "  style="margin-left: 30%"/>
+
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+
+        </record>
+        <record model="ir.actions.act_window" id="xero_action">
+            <field name="name">Xero window</field>
+            <field name="res_model">xero.connector</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_mode">form,tree</field>
+            <field name="res_id" ref="odoo_xero.my_record_01" />
+            <field name="target">inline</field>
+        </record>
+
+        <menuitem id="main_xero_menu" web_icon="ODOO XERO,static/description/icon.png" name="Xero" />
+        <menuitem id="xero_menu" name="Xero" parent="main_xero_menu" action="xero_action" />
+
+
+    </data>
+</odoo>

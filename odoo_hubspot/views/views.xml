@@ -1,0 +1,75 @@
+<odoo>
+
+    <data>
+        <record model="ir.ui.view" id="custom_user_form_view">
+            <field name="name">user.custom_user</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Hubspot">
+                        <group string="Hubspot Settings">
+
+                            <field name="key"/>
+                        </group>
+                        <group string="Sync Data">
+                            <group>
+                                <button string="Import Companies" type="object" name="import_companies"
+                                        class="oe_highlight"/>
+                                <button string="Export Companies" type="object" name="export_companies"
+                                        class="oe_highlight"/>
+                            </group>
+                            <group>
+                                <button string="Import Contacts" type="object" name="import_contacts"
+                                        class="oe_highlight"/>
+                                <button string="Export Contacts" type="object" name="export_contacts"
+                                        class="oe_highlight"/>
+                            </group>
+
+
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        <!--<record model="ir.ui.view" id="hubspot_settings_form_view">-->
+            <!--<field name="name">hubspot.form</field>-->
+            <!--<field name="model">hubspot.settings</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<form string="Hubspot Settings" create="false" edit="false">-->
+                    <!--<sheet>-->
+                        <!--<group>-->
+                            <!--<group>-->
+                                <!--<h1>Hubspot Settings</h1>-->
+                            <!--</group>-->
+                        <!--</group>-->
+                        <!--<group>-->
+                            <!--<group>-->
+                                <!--<field name="redirect_url"/>-->
+                                <!--<field name="client_id"/>-->
+                                <!--<field name="secret"/>-->
+                            <!--</group>-->
+                            <!--<group>-->
+                            <!--</group>-->
+                            <!--<group>-->
+                                <!--<button name="sync_data" type="object" string="Activate" class="oe_highlight"-->
+                                        <!--style="width:20%"/>-->
+                            <!--</group>-->
+                        <!--</group>-->
+                    <!--</sheet>-->
+                <!--</form>-->
+            <!--</field>-->
+        <!--</record>-->
+        <!--<record model="ir.actions.act_window" id="office_action">-->
+            <!--<field name="name">Hubspot Settings</field>-->
+            <!--<field name="res_model">hubspot.settings</field>-->
+            <!--<field name="view_type">form</field>-->
+            <!--<field name="view_mode">form</field>-->
+            <!--<field name="res_id" ref="odoo_hubspot.my_record_01"/>-->
+            <!--<field name="target">inline</field>-->
+        <!--</record>-->
+        <!--<menuitem id="hubspot_menu" name="Hubspot"-->
+                  <!--parent="base.menu_users" action="office_action"/>-->
+
+    </data>
+</odoo>
