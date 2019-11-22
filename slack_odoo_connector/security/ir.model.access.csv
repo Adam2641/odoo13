@@ -1,9 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-
-access_slack_users,access.slack.users,model_slack_users,,1,1,1,1
-
-access_slack_group,access.slack.group,model_slack_group,,1,1,1,1
-
-access_slack_data,access.slack.data,model_slack_data,,1,1,1,1
-
-access_slack_data_users,access.slack.data.users,model_slack_data_users,,1,1,1,1

@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_shopify_connector,access.shopify.connector,model_shopify_connector,base.group_user,1,1,1,1
-access_shopify_settings,access.shopify.settings,model_shopify_settings,base.group_user,1,1,1,1
-access_shopify_autoconnector,access.shopify.autoconnector,model_shopify_autoconnector,base.group_user,1,1,1,1
-access_sync_history,access.sync.history,model_sync_history,base.group_user,1,1,1,1
