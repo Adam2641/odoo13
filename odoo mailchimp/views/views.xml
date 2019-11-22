@@ -1,0 +1,376 @@
+<odoo>
+    <data noupdate="1">
+        <record id="my_record_01" model="mailchimp.connector">
+            <field name="field_name">MailChimp</field>
+        </record>
+    </data>
+    <data noupdate="1">
+        <record id="my_record_02" model="mailchimp.settings">
+            <field name="field_name">MailChimp Settings</field>
+        </record>
+    </data>
+    <data>
+        <record model="ir.ui.view" id="custom_user_form_view">
+            <field name="name">user.custom_user</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="MailChimp">
+                        <group>
+                            <field name="mailchimp_username" />
+                            <field name="api_key" />
+                            <button string="Test Connection" type="object" name="test_connection" class="oe_highlight" />
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="mailchimp_form_view">
+            <field name="name">mailchimp.form</field>
+            <field name="model">mailchimp.connector</field>
+            <field name="arch" type="xml">
+                <form string="MailChimp Settings" create="false" edit="false">
+                    <sheet>
+                        <group>
+                            <h1>ODOO-MailChimp CONNECTOR</h1>
+                            <group>
+                            </group>
+                            <group>
+                                <group>
+                                </group>
+                                <group>
+                                </group>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <button name="sync" type="object" string="Sync" class="oe_highlight" icon="fa-refresh fa-2x" style="width:50%" />
+                                <!--                                <button name="testing" type="object" string="Test" class="oe_highlight" icon="fa-refresh fa-2x" style="width:50%" />-->
+                            </group>
+                        </group>
+                        <notebook colspan="3">
+                            <page string="MailChimp Campaigns" autofocus="autofocus">
+                                <group>
+                                    <field name="campaign_ids" mode="tree,kanban">
+                                        <form string="Campaign Lines" edit="false" create="false">
+                                            <group>
+                                                <group>
+                                                    <field name="name" />
+                                                    <field name="mailchimp_id" />
+
+                                                    <button name="replicate_campaign" type="object" string="REPLICATE" class="oe_highlight" />
+
+                                                </group>
+                                            </group>
+                                        </form>
+                                        <tree string="MailChimp Lines" create="false" delete="true">
+                                            <field name="name" />
+                                            <field name="mailchimp_id" />
+                                            <button name="replicate_campaign" type="object" string="REPLICATE" class="oe_highlight" />
+                                        </tree>
+                                    </field>
+                                </group>
+
+                            </page>
+                            <page string="MailChimp Lists" autofocus="autofocus">
+                                <group>
+                                    <field name="list_ids" mode="tree,kanban">
+                                        <form string="Sales Order Lines" edit="false" create="false">
+                                            <group>
+                                                <group>
+                                                    <field name="name" />
+                                                    <field name="from_email" />
+                                                    <field name="from_name" />
+                                                    <field name="subject" />
+                                                    <field name="mailchimp_id" />
+                                                </group>
+                                            </group>
+                                        </form>
+                                        <tree string="MailChimp Lines" create="false" delete="true" limit="15">
+                                            <field name="name" />
+                                            <field name="from_email" />
+                                            <field name="from_name" />
+                                            <field name="subject" />
+                                            <field name="mailchimp_id" />
+                                        </tree>
+                                    </field>
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Campaigns-->
+        <record model="ir.ui.view" id="mailchimp_campaign_form_view">
+
+            <field name="name">mailchimp.campaign.form</field>
+            <field name="model">mailchimp.campaign</field>
+            <field name="arch" type="xml">
+                <form string="MailChimp Campaign" create="false" edit="false">
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="mailchimp_id" />
+                                <field name="customer" />
+                                <field name="list_id" />
+                                <field name="list_name" />
+                                <field name="total_recipient" />
+                            </group>
+                            <group>
+                                <field name="name" />
+                                <field name="total_open" />
+                                <field name="total_orders" />
+                                <field name="total_revenue" />
+                                <field name="total_spent" />
+                            </group>
+
+                        </group>
+                        <group>
+                            <!--                            testing-->
+                            <field name="many_customer_ids" mode="tree,kanban">
+                                <form string="Customer details">
+                                    <group>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="email" />
+                                            <field name="phone" />
+                                            <field name="member_status" />
+
+                                        </group>
+                                        <group>
+                                            <field name="campaign_name" />
+                                            <field name="list_name" />
+
+                                        </group>
+                                    </group>
+
+                                </form>
+
+                                <tree string="Customer details" create="false">
+
+                                    <field name="name" />
+                                    <field name="email" />
+                                    <field name="phone" />
+                                    <field name="member_status" />
+
+                                </tree>
+
+                            </field>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="mailchimp_campaign_tree_view">
+
+            <field name="name">mailchimp.tree</field>
+            <field name="model">mailchimp.campaign</field>
+            <field name="arch" type="xml">
+                <tree string="MailChimp Campaign">
+                    <field name="mailchimp_id" />
+                    <field name="name" />
+                    <field name="list_name" />
+                    <field name="total_recipient" />
+                    <field name="status" />
+
+                    <!-- <field name="many_customer_ids"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!---->
+        <record model="ir.ui.view" id="mailchimp_list_form_view">
+
+            <field name="name">mailchimp.list.form</field>
+            <field name="model">mailchimp.list</field>
+            <field name="arch" type="xml">
+                <form string="MailChimp Lists">
+                    <header>
+                        <button name="sync_customers" type="object" string="Sync With MailChimp" class="oe_highlight" />
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="mailchimp_id" />
+                                <field name="name" />
+                                <field name="from_email" />
+                                <field name="from_name" />
+                                <field name="subject" />
+                                <field name="permission_reminder" />
+                                <field name="company" />
+                            </group>
+                            <group>
+                                <field name="address1" />
+                                <field name="address2" />
+                                <field name="phone" />
+                                <field name="city" />
+                                <field name="state" />
+                                <field name="zip" />
+                                <field name="country" />
+                            </group>
+
+                        </group>
+                        <group>
+                            <field name="many_customer_ids" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--        list tree-->
+        <record model="ir.ui.view" id="mailchimp_list_tree_view">
+
+            <field name="name">mailchimp.tree</field>
+            <field name="model">mailchimp.list</field>
+            <field name="arch" type="xml">
+                <tree string="MailChimp List">
+                    <field name="name" />
+                    <field name="from_email" />
+                    <field name="from_name" />
+                    <field name="subject" />
+                    <field name="mailchimp_id" />
+                    <field name="many_customer_ids" />
+                </tree>
+            </field>
+        </record>
+<!--        -->
+<!--        form-->
+        <record model="ir.ui.view" id="mailchimp_setting_form_view">
+            <field name="name">mailchimp.settings</field>
+            <field name="model">mailchimp.settings</field>
+            <field name="arch" type="xml">
+                <form string="MailChimp Settings" create="false" edit="false">
+                    <sheet>
+                        <group>
+                            <group>
+                                <h1>MailChimp Settings</h1>
+                            </group>
+                            <group>
+                                <group>
+                                </group>
+                                <group>
+                                </group>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="mailchimp_username" />
+                                <field name="api_key" />
+                            </group>
+                            <group>
+                            </group>
+                            <group>
+                                <button name="test_connection" type="object" string="Save" class="oe_highlight" icon="fa-refresh fa-2x" style="width:20%" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mailchimp_settings_action">
+            <field name="name">mailchimp settings window</field>
+            <field name="res_model">mailchimp.settings</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="res_id" ref="my_record_02" />
+            <field name="target">inline</field>
+        </record>
+        <record model="ir.actions.act_window" id="mailchimp_action">
+            <field name="name">MailChimp Window</field>
+            <field name="res_model">mailchimp.connector</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+            <field name="res_id" ref="my_record_01" />
+            <field name="target">inline</field>
+        </record>
+
+        <!-- campaign action -->
+        <record model="ir.actions.act_window" id="mailchimp_campaign_action">
+            <field name="name">MailChimp Campaign</field>
+            <field name="res_model">mailchimp.campaign</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--/////-->
+
+        <!--        res.user-->
+        <record model="ir.ui.view" id="partner_user_form_view">
+            <field name="name">partner.mailchimp</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <tree string="Mailchimp Details" create="false" delete="false">
+
+                        <group>
+
+                            <field name="many_list_ids" />
+
+                        </group>
+
+                        <group>
+                            <!--                            <field name="many_campaign_ids"/>-->
+
+                            <field name='partner_campaign_ids' mode="tree,kanban">
+
+                                <form string="Sales Order Lines">
+                                    <group>
+                                        <group>
+                                            <field name="name" />
+                                            <field name="total_open" />
+                                            <field name="total_clicks" />
+
+                                        </group>
+                                        <group>
+                                            <field name="total_orders" />
+                                            <field name="total_revenue" />
+                                            <field name="total_spent" />
+
+                                        </group>
+                                    </group>
+
+                                </form>
+
+                                <tree string="Sales Order Lines" create="false">
+
+                                    <field name="name" />
+                                    <field name='list_name' />
+                                    <field name="total_recipient" />
+                                    <field name="send_date" />
+                                    <field name="status" />
+                                    <field name="member_status" />
+                                </tree>
+
+                            </field>
+
+                        </group>
+
+                    </tree>
+
+                </notebook>
+            </field>
+        </record>
+        <!---->
+        <record model="ir.actions.act_window" id="mailchimp_list_action">
+            <field name="name">MailChimp List</field>
+            <field name="res_model">mailchimp.list</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="main_mailchimp_menu" name="MailChimp" />
+        <menuitem id="mailchimp_settings_menu" name="MailChimp Settings" parent="main_mailchimp_menu" action="mailchimp_settings_action" />
+        <menuitem id="mailchimp_menu" name="MailChimp" parent="main_mailchimp_menu" action="mailchimp_action" />
+        <menuitem id="mailchimp_campaign_menu" name="MailChimp Campaigns" parent="main_mailchimp_menu" action="mailchimp_campaign_action" />
+        <menuitem id="mailchimp_list_menu" name="MailChimp Lists" parent="main_mailchimp_menu" action="mailchimp_list_action" />
+
+    </data>
+</odoo>

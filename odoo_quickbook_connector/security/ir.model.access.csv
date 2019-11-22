@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_template,acccess.product.template,model_product_template,, 1,1,1,0
+access_quickbooks_connector,acccess.quickbooks.connector,model_quickbooks_connector,, 1,1,1,0
+access_quickbooks_autoconnector,access.quickbooks.autoconnector,model_quickbooks_autoconnector,, 1,1,1,0
+access_quickbooks_autoexportconnector,access.quickbooks.autoexportconnector,model_quickbooks_autoexportconnector,, 1,1,1,0

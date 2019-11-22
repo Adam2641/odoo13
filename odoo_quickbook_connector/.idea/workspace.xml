@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a4c3c26a-3ddb-48b5-92e3-2b443da41935" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../alfresco_odoo_connector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../alfresco_odoo_connector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mailchimp_connector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mailchimp_connector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mailchimp_connector/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../mailchimp_connector/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mailchimp_connector/static/description/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../mailchimp_connector/static/description/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo mailchimp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo mailchimp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo mailchimp/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo mailchimp/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo mailchimp/static/description/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo mailchimp/static/description/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_eventbrite/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_eventbrite/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_eventbrite/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_eventbrite/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_eventbrite/static/description/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_eventbrite/static/description/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_hubspot/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_hubspot/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_hubspot/static/description/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_hubspot/static/description/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_office365/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_office365/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_office365/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_office365/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_office365/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_office365/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../odoo_office365/static/description/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/../odoo_office365/static/description/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>access</find>
+      <find>gene</find>
+      <find>self.prod_base_url_v3</find>
+      <find>test_authentication</find>
+      <find>url</find>
+      <find>test_conn</find>
+      <find>generate</find>
+      <find>realm_id</find>
+      <find>Validate Account</find>
+      <find>sync_data</find>
+      <find>sync_customers</find>
+      <find>auth</find>
+      <find>ir.val</find>
+      <find>ir.def</find>
+      <find>run_product_new_order_action2</find>
+      <find>product_order_new_action1</find>
+      <find>print</find>
+      <find>ir.default</find>
+      <find>Export/Update Product</find>
+      <find>quickbooks.autoconnector</find>
+      <find>quickbooks.autoexportconnector</find>
+      <find>quickbooks.connector</find>
+      <find>quickbooks_autoconnector</find>
+      <find>import_da</find>
+      <find>redirect_url</find>
+      <find>form</find>
+      <find>rauth</find>
+      <find>import_in</find>
+      <find>import_data</find>
+      <find>json.loads</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="77" />
+    <option name="y" value="139" />
+    <option name="width" value="947" />
+    <option name="height" value="427" />
+  </component>
+  <component name="ProjectId" id="1S0aJzU8XxmDZR4sFN6D6dILDII" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.models">
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="odoo_quickbook_connector" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration name="fdsfsdf" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="odoo_quickbook_connector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/fdsfsdf.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="odoo_quickbook_connector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.5" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../odoo" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../odoo/odoo-bin" />
+      <option name="PARAMETERS" value="--config=/etc/odoo12.conf" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testfile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="odoo_quickbook_connector" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python3.6" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/testfile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.models" />
+      <item itemvalue="Python.testfile" />
+      <item itemvalue="Python.fdsfsdf" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.models" />
+        <item itemvalue="Python.fdsfsdf" />
+        <item itemvalue="Python.testfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4c3c26a-3ddb-48b5-92e3-2b443da41935" name="Default" comment="" />
+      <created>1491299948231</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1491299948231</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>requests.post(urls,
+            data='grant_type=refresh_token&amp;refresh_token=' +self.refresh_access_token +  '&amp;client_id=' + self.client_id + '&amp;client_secret=' + self.client_secret
+            , headers=headers).content</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>requests.post(urls,
+            data='grant_type=refresh_token&amp;refresh_token=' +self.refresh_access_token +  '&amp;client_id=' + self.client_id + '&amp;client_secret=' + self.client_secret
+            , headers=header).content</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>requests.post(urls,
+            data='grant_type=refresh_token&amp;refresh_token=' +self.refresh_access_token + '&amp;redirect_uri=' + self.redirect_url + '&amp;client_id=' + self.client_id + '&amp;client_secret=' + self.client_secret
+            , headers=header).content</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>json.loads(qb_invoices.content.decode('utf-8'))['QueryResponse']['Invoice']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>json.loads(qb_customers.content.decode('utf-8'))['QueryResponse']['Customer']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>json.loads(str(qb_customers.content))['QueryResponse']['Customer']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>response['QueryResponse'][0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>response['QueryResponse']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>response</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>response['Name']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>response.content['Name']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>response['id']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+</project>

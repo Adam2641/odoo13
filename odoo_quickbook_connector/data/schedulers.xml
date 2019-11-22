@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data noupdate="0">
+<record id="status_from_cron_scheduler_action_customer" model="ir.cron">
+<field name="name">Import Customers Scheduler</field>
+<field name="model_id" ref="model_quickbooks_connector"/>
+<field name="user_id" ref="base.user_root"/>
+<field name="interval_number">1</field>
+<field name="interval_type">minutes</field>
+<field name="numbercall">-1</field>
+<field eval="False" name="doall"/>
+<field eval="'quickbooks.connector'" name="model"/>
+<field eval="'sync_customers'" name="function"/>
+<!--<field eval="'(True,)'" name="args"/>-->
+</record>
+<record id="status_from_cron_scheduler_action_product" model="ir.cron">
+<field name="name">Import Products Scheduler</field>
+<field name="model_id" ref="model_quickbooks_connector"/>
+<field name="user_id" ref="base.user_root"/>
+<field name="interval_number">1</field>
+<field name="interval_type">minutes</field>
+<field name="numbercall">-1</field>
+<field eval="False" name="doall"/>
+<field eval="'quickbooks.connector'" name="model"/>
+<field eval="'sync_products'" name="function"/>
+<!--<field eval="'(True,)'" name="args"/>-->
+</record>
+<record id="status_from_cron_scheduler_action_invoice" model="ir.cron">
+<field name="name">Import Invoices Scheduler</field>
+<field name="model_id" ref="model_quickbooks_connector"/>
+<field name="user_id" ref="base.user_root"/>
+<field name="interval_number">1</field>
+<field name="interval_type">minutes</field>
+<field name="numbercall">-1</field>
+<field eval="False" name="doall"/>
+<field eval="'quickbooks.connector'" name="model"/>
+<field eval="'sync_invoices'" name="function"/>
+<!--<field eval="'(True,)'" name="args"/>-->
+</record>
+<record id="status_from_cron_scheduler_action_customer_export" model="ir.cron">
+<field name="name">Export Customers Scheduler</field>
+<field name="model_id" ref="model_res_partner"/>
+<field name="user_id" ref="base.user_root"/>
+<field name="interval_number">1</field>
+<field name="interval_type">minutes</field>
+<field name="numbercall">-1</field>
+<field eval="False" name="doall"/>
+<field eval="'res.partner'" name="model"/>
+<field eval="'sync_customer'" name="function"/>
+<field eval="'(True,)'" name="args"/>
+</record>
+<record id="status_from_cron_scheduler_action_product_export" model="ir.cron">
+<field name="name">Export Products Scheduler</field>
+<field name="model_id" ref="model_product_template"/>
+<field name="user_id" ref="base.user_root"/>
+<field name="interval_number">1</field>
+<field name="interval_type">minutes</field>
+<field name="numbercall">-1</field>
+<field eval="False" name="doall"/>
+<field eval="'product.template'" name="model"/>
+<field eval="'sync_product'" name="function"/>
+<field eval="'(True,)'" name="args"/>
+</record>
+<record id="status_from_cron_scheduler_action_invoice_export" model="ir.cron">
+<field name="name">Export Invoices Scheduler</field>
+<field name="model_id" ref="model_account_invoice"/>
+<field name="user_id" ref="base.user_root"/>
+<field name="interval_number">1</field>
+<field name="interval_type">minutes</field>
+<field name="numbercall">-1</field>
+<field eval="False" name="doall"/>
+<field eval="'account.invoice'" name="model"/>
+<field eval="'sync_invoice'" name="function"/>
+<field eval="'(True,)'" name="args"/>
+</record>
+</data>
+</odoo>

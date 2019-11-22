@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="ds_setting_action">
+            <field name="name">DocuSign</field>
+            <field name="res_model">docu.credentials</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">['|',('create_uid','=',uid),('create_uid','=',False)]</field>
+
+        </record>
+
+        <record model="ir.ui.view" id="ds_settings_form_view">
+
+            <field name="name">docusign.form</field>
+            <field name="model">docu.credentials</field>
+            <field name="arch" type="xml">
+                <form string="DocuSign Credentials Form">
+                    <sheet>
+                        <group>
+
+                            <field name="name"/>
+                            <field name="useremail"/>
+                            <field name="userpassword"/>
+                            <field name="auth_key"/>
+                            <field name="accounttype"/>
+                            <button name="test_credientials" type="object" string="Test Credientials" class="oe_highlight" />
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="ds_settings_tree_view">
+
+            <field name="name">docusign.tree</field>
+            <field name="model">docu.credentials</field>
+            <field name="arch" type="xml">
+                <tree string="DocuSign Credentials Tree">
+                    <field name="name"/>
+                    <field name="useremail"/>
+                    <field name="userpassword"/>
+                    <field name="auth_key"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <menuitem id="main_docu_menu" name="DocuSign"/>
+
+        <menuitem id="docu_configuration" name="DocuSign"
+                  parent="main_docu_menu"/>
+
+        <menuitem id="adobe_setting_menu" name="Settings" parent="docu_configuration"
+                  action="ds_setting_action"/>
+
+    </data>
+</odoo>

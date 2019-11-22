@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="partner_instructor_form_view1">
+            <field name="name">partner.instructor</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Docusign">
+
+                        <group string="DocuSign Account">
+                            <field name="account_id" domain="['|',('create_uid','=',uid),('create_uid','=',False)]"/>
+                        </group>
+
+                        <group string="Send Document">
+                            <group>
+                                <field name="attachment_ids" filename="my_file_fname" widget="many2many_binary"
+                                       domain="['|',('create_uid','=',uid),('create_uid','=',False)]"/>
+                                <button name="send_documents" context="{'key': 0}" type="object"
+                                        string="Send Documents to SalesPerson" class="oe_highlight"/>
+
+                            </group>
+                            <group>
+                                <field name="sales_person_agreement_ids"
+                                       domain="[('customer_id','=',id),('salesperson_signed','!=',0)]"/>
+                                <button name="send_documents" context="{'key': 1}" type="object"
+                                        string="Send Documents to Customer" class="oe_highlight"/>
+
+                            </group>
+
+                        </group>
+                        <div style="color:#7c7bad;font-weight:bold;font-size:20px">Document Status</div>
+                        <button string="Update Status" name="documents_status" type="object" class="oe_highlight"/>
+                        <br/>
+                        <br/>
+
+                        <br/>
+                        <br/>
+                        <field name="agreement_ids" widget="one2many_list">
+                            <form string="Agreements Form">
+                                <group>
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="agreement_status"/>
+                                        <field name="customer_agreement_status"/>
+                                        <field name="unsigned_file_data_adobesign" widget="many2many_binary"/>
+                                        <field name="upload_file_data_adobesign" widget="many2many_binary"/>
+                                        <field name="salesperson_signed_file_data_adobesign" widget="many2many_binary"/>
+                                    </group>
+                                </group>
+
+                            </form>
+                            <tree string="Agreements" create="0" edit="0">
+                                <field name="name"/>
+                                <field name="agreement_status"/>
+                                <field name="customer_agreement_status"/>
+                                <field name="unsigned_file_data_adobesign" widget="many2many_binary"/>
+                                <field name="upload_file_data_adobesign" widget="many2many_binary"/>
+                                <field name="salesperson_signed_file_data_adobesign" widget="many2many_binary"/>
+
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="docusign_view_order_form_inherit">
+            <field name="name">docusign.view.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Docusign">
+
+                        <group string="DocuSign Account">
+                            <field name="account_id" domain="['|',('create_uid','=',uid),('create_uid','=',False)]"/>
+                        </group>
+
+                        <group string="Send Document">
+                            <group>
+                                <field name="attachment_ids" filename="my_file_fname" widget="many2many_binary"
+                                       domain="['|',('create_uid','=',uid),('create_uid','=',False)]"/>
+                                <button name="send_documents" context="{'key': 0}" type="object"
+                                        string="Send Documents to SalesPerson" class="oe_highlight"/>
+
+                            </group>
+                            <group>
+                                <field name="sales_person_agreement_ids"
+                                       domain="[('customer_id','=',id),('salesperson_signed','!=',0)]"/>
+                                <button name="send_documents" context="{'key': 1}" type="object"
+                                        string="Send Documents to Customer" class="oe_highlight"/>
+
+                            </group>
+                        </group>
+                        <div style="color:#7c7bad;font-weight:bold;font-size:20px">Document Status</div>
+                        <button string="Update Status" name="documents_status" type="object" class="oe_highlight"/>
+                        <br/>
+                        <br/>
+
+                        <br/>
+                        <br/>
+                        <field name="agreement_ids" widget="one2many_list">
+                            <form string="Agreements Form">
+                                <group>
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="agreement_status"/>
+                                        <field name="customer_agreement_status"/>
+                                        <field name="unsigned_file_data_adobesign" widget="many2many_binary"/>
+                                        <field name="upload_file_data_adobesign" widget="many2many_binary"/>
+                                        <field name="salesperson_signed_file_data_adobesign" widget="many2many_binary"/>
+                                    </group>
+                                </group>
+
+                            </form>
+                            <tree string="Agreements" create="0" edit="0">
+                                <field name="name"/>
+                                <field name="agreement_status"/>
+                                <field name="customer_agreement_status"/>
+                                <field name="unsigned_file_data_adobesign" widget="many2many_binary"/>
+                                <field name="upload_file_data_adobesign" widget="many2many_binary"/>
+                                <field name="salesperson_signed_file_data_adobesign" widget="many2many_binary"/>
+
+                            </tree>
+                        </field>
+                    </page>
+
+                </notebook>
+            </field>
+        </record>
+
+    </data>
+</odoo>

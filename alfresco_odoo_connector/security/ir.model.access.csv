@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_alfresco_upload,access.alfresco.upload,model_alfresco_upload,,1,1,1,1
+access_alfresco_credentials,access.alfresco.credentials,model_alfresco_credentials,,1,1,1,1
+access_documents_links,access.documents.links,model_documents_links,,1,1,1,1

@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="hubspot_cron_do_contact_import" model="ir.cron">
+            <field name="name">Auto contacts import</field>
+            <field name="model_id" ref="model_res_users"/>
+            <field name="state">code</field>
+            <field name="code">model.auto_import_contacts()</field>
+            <field name='interval_number'>4</field>
+            <field name='interval_type'>minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+        <record id="hubspot_cron_do_contact_export" model="ir.cron">
+            <field name="name">Auto contacts export</field>
+            <field name="model_id" ref="model_res_users"/>
+            <field name="state">code</field>
+            <field name="code">model.auto_export_contacts()</field>
+            <field name='interval_number'>4</field>
+            <field name='interval_type'>minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+        <record id="hubspot_cron_do_companies_import" model="ir.cron">
+            <field name="name">Auto companies import</field>
+            <field name="model_id" ref="model_res_users"/>
+            <field name="state">code</field>
+            <field name="code">model.auto_import_companies()</field>
+            <field name='interval_number'>4</field>
+            <field name='interval_type'>minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+        <record id="hubspot_cron_do_companies_export" model="ir.cron">
+            <field name="name">Auto companies export</field>
+            <field name="model_id" ref="model_res_users"/>
+            <field name="state">code</field>
+            <field name="code">model.auto_export_companies()</field>
+            <field name='interval_number'>4</field>
+            <field name='interval_type'>minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+    </data>
+</odoo>

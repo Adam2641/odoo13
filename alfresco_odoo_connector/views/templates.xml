@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <odoo>
+        <data>
+
+            <record model="ir.actions.act_window" id="upload_file_action">
+                <field name="name">Alfresco Documents</field>
+                <field name="res_model">alfresco.upload</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+
+            <record model="ir.actions.act_window" id="alresco_setting_action">
+                <field name="name">Alfresco Settings</field>
+                <field name="res_model">alfresco.credentials</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+            </record>
+
+            <record model="ir.ui.view" id="upload_file_form_view">
+                <field name="name">alfrescoupload.form</field>
+                <field name="model">alfresco.upload</field>
+                <field name="arch" type="xml">
+                    <form string="Alfrescom">
+                        <sheet>
+
+                            <group string="Alfresco Account" name="account">
+                                <field name="directory_name" />
+                                <field name="user_name" />
+
+                            </group>
+
+                            <group string="Upload" name="documents">
+
+                                <field name="upload_file_data" filename="my_file_fname" widget="many2many_binary" />
+                                <button name="alfresco_doc_upload" type="object" string="Upload" class="oe_highlight" />
+
+                            </group>
+
+                            <group string="Downloaded Documents" name="downloaded_documents">
+
+                                <field name="downloaded_file_data_alfresco" filename="my_file_fname" widget="many2many_binary" />
+
+                            </group>
+
+                            <field name="order_line" mode="tree,kanban">
+                                <form string="Sales Order Lines">
+                                    <group>
+                                        <group>
+                                            <field name="customer_name" />
+                                            <field name="name" />
+                                            <field name="document_link" />
+                                        </group>
+                                    </group>
+
+                                </form>
+
+                                <tree string="Sales Order Lines" create="false">
+
+                                    <field name="name" />
+                                    <field name="status" />
+                                    <!--<field name="document_link"/>-->
+                                    <!--<button name="download_file_form_doc_link_sharepoint" type="object" string="Download Document" class="oe_highlight" />-->
+                                    <button name="download_file_form_doc_link_alfresco" type="object" string="Download" class="btn-primary" />
+
+                                </tree>
+
+                            </field>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <!-- res.partner record-->
+            <record model="ir.ui.view" id="res_upload_file_form_view">
+                <field name="name">Alfresco.form</field>
+                <field name="model">res.partner</field>
+                <field name="inherit_id" ref="base.view_partner_form" />
+                <field name="arch" type="xml">
+                    <notebook position="inside">
+                        <page name="alfresco" string="Alfresco">
+
+                            <group string="Alfresco Account" name="account">
+
+                                <field name="user_name_alfresco" />
+
+                            </group>
+
+                            <group string="Upload" name="documents">
+
+                                <field name="upload_file_data_alfresco" filename="my_file_fname" widget="many2many_binary" />
+                                <button name="upload_doc_alfresco" type="object" string="Upload" class="oe_highlight" />
+
+                            </group>
+
+                            <group string="Downloaded Documents" name="downloaded_documents">
+
+                                <field name="downloaded_file_data_alfresco" filename="my_file_fname" widget="many2many_binary" />
+
+                            </group>
+
+                            <!--<group string="Download" name="download">-->
+                            <!--                        <button name="download_docs_links_alfresco" type="object" string="Sync Documents Links" class="oe_highlight" />-->
+
+                            <field name="order_line" mode="tree,kanban">
+                                <form string="Sales Order Lines">
+                                    <group>
+                                        <group>
+                                            <field name="customer_name" />
+                                            <field name="name" />
+                                            <field name="document_link" />
+                                        </group>
+                                    </group>
+
+                                </form>
+
+                                <tree string="Sales Order Lines" create="false">
+
+                                    <field name="name" />
+                                    <field name="status" />
+                                    <button name="download_file_form_doc_link_alfresco" type="object" string="Download" class="btn-primary" />
+
+                                </tree>
+
+                            </field>
+                            <!--</group>-->
+                        </page>
+                    </notebook>
+                </field>
+            </record>
+
+            <!---->
+
+            <record model="ir.ui.view" id="upload_file_tree_view">
+                <field name="name">alfrescoupload.tree</field>
+                <field name="model">alfresco.upload</field>
+                <field name="arch" type="xml">
+                    <tree string="Upload Document">
+                        <field name="directory_name" />
+                        <field name="upload_file_data" />
+                        <field name="user_name" />
+                    </tree>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="alresco_settings_form_view">
+
+                <field name="name">alfrescocredentials.form</field>
+                <field name="model">alfresco.credentials</field>
+                <field name="arch" type="xml">
+                    <form string="Alresco Credentials">
+                        <sheet>
+                            <group>
+                                <field name="url" />
+                                <field name="name" />
+                                <field name="pass_word" password="True" />
+<!--                                <field name="directory_name" placeholder="Optional" />-->
+                                <button name="test_connection" type="object" string="Test Connection" class="oe_highlight" />
+
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="alresco_settings_tree_view">
+
+                <field name="name">alfrescocredentials.tree</field>
+                <field name="model">alfresco.credentials</field>
+                <field name="arch" type="xml">
+                    <tree string="Alresco Users">
+                        <field name="url" />
+                        <field name="name" />
+                    </tree>
+                </field>
+            </record>
+
+            <!-- top level menu: no parent -->
+            <menuitem id="main_alfodoo_menu" name="Alfresco" />
+
+            <menuitem id="alfodoo_menu" name="Documents" parent="main_alfodoo_menu" />
+
+            <menuitem id="alfodoo_home_menu" name="Alfresco" parent="alfodoo_menu" action="upload_file_action" />
+            <menuitem id="alfodoo_configuration" name="Configuration" parent="main_alfodoo_menu" />
+
+            <menuitem id="alfodoo_setting_menu" name="Settings" parent="alfodoo_configuration" action="alresco_setting_action" />
+
+        </data>
+    </odoo>
